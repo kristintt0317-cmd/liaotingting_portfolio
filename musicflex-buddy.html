@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MusicFlex Buddy – Tingting Liao</title>
+  <meta name="description" content="A soft-robotic music interaction system that translates knee movement into pneumatic actuation and sound for users with upper-limb disabilities." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>:root{--accent:#b85b53;--accent-soft:rgba(184,91,83,.14);}</style>
+</head>
+<body class="project-page">
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark"></span><span>Tingting Liao</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="wrap">
+        <div class="back-row reveal">
+          <a class="button secondary" href="projects.html">← Back to projects</a>
+          <a class="next-project" href="generative-mechanical-score.html"><span class="small-note">Next</span><strong>Generative Mechanical Score</strong></a>
+        </div>
+        <div class="project-layout">
+          <div class="reveal">
+            <p class="kicker">Graduate Project 01</p>
+            <span class="eyebrow"><span class="dot"></span> Soft Robotics · Wearable Textile · Inclusive Music Interaction</span>
+            <h1>MusicFlex Buddy</h1>
+            <p class="lead">A music-interactive soft robotic system designed for users with upper-limb mobility limitations. The project uses knee movement as input, then maps flex-sensor data to pneumatic actuation and sound for rehabilitation, learning, and performance.</p>
+            <div class="meta-grid">
+              <div class="meta-item"><small>Type</small><strong>Group Project</strong></div>
+              <div class="meta-item"><small>Context</small><strong>Creative Robotics · Inclusive performance</strong></div>
+              <div class="meta-item"><small>Input</small><strong>Knee sleeve + flex sensors</strong></div>
+              <div class="meta-item"><small>Output</small><strong>Pneumatic airbags + sound playback</strong></div>
+            </div>
+            <div class="tags"><span class="tag">Soft robotics</span><span class="tag">Rehabilitation</span><span class="tag">Flex sensor</span><span class="tag">Pneumatic actuation</span></div>
+            <div class="hero-actions">
+              <a class="button primary" href="#process">Read the case study</a>
+              <a class="button secondary" href="#gallery-block">Open visual gallery</a>
+            </div>
+          </div>
+          <div class="project-cover reveal"><img src="assets/musicflex/mf-20.jpg" alt="MusicFlex Buddy final design cover" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="project-number">Overview</p>
+            <h2 class="section-title">Translating body language into musical expression.</h2>
+          </div>
+          <p class="section-note">This page condenses the slide deck and written report into a web-first story focused on concept, system architecture, and technical debugging.</p>
+        </div>
+        <div class="overview-grid">
+          <article class="overview-card reveal">
+            <h3>Design challenge</h3>
+            <p>Traditional instruments depend on precise hand movements, which can create pain, access barriers, and limited expressive options for people with upper-limb disabilities. The project therefore explores whether larger body movements can become a more comfortable and emotionally meaningful input for music-making.</p>
+          </article>
+          <article class="overview-card reveal">
+            <h3>Design response</h3>
+            <p>The team chose knee motion as the primary input. Flex sensors embedded in a wearable textile read knee bending, the system converts those values into pneumatic inflation and deflation, and pressure-based triggering produces rhythm and pitch through a speaker system.</p>
+          </article>
+        </div>
+        <div class="stats-grid" style="grid-template-columns:repeat(3,1fr);margin-top:18px">
+          <article class="stat-card reveal"><strong>Knee</strong><p>selected as the primary input because it is less taxing than fine hand control</p></article>
+          <article class="stat-card reveal"><strong>4 pairs</strong><p>of airbags generate visual expansion and rhythmic feedback</p></article>
+          <article class="stat-card reveal"><strong>Sense → process → act</strong><p>wearable sensing, embedded control, pneumatic and audio output</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="project-number">Project story</p>
+            <h2 class="section-title">From user selection to system debugging.</h2>
+          </div>
+          <p class="section-note">The key contribution on this project was debugging the pneumatic drive and improving sensor stability across the system.</p>
+        </div>
+        <div class="case-grid">
+          <article class="content-card reveal">
+            <h3>Target user and concept</h3>
+            <p>The project deliberately focuses on users with upper-limb disabilities rather than broader disability categories, arguing that many existing resources already concentrate on audio-visual impairment. Because most instruments rely on hands, the design opportunity is both practical and emotionally relevant.</p>
+          </article>
+          <article class="content-card reveal">
+            <h3>System architecture</h3>
+            <p>The system uses a knee sleeve with flex sensors as the input layer, Arduino UNO as the processing layer, and pneumatic bladders plus DFPlayer-driven sound as the output layer. The interaction path is clear: knee bending → flex value change → actuation logic → rhythmic sound and expanding form.</p>
+          </article>
+          <article class="content-card reveal">
+            <h3>Material and form</h3>
+            <p>Wearable textile anchors the sensors to the body, while lightweight plastic airbags, transparent tubing, acrylic supports, and speaker hardware create a leaf-like kinetic form. The structure makes sound visible, not just audible, which strengthens the performative quality of the system.</p>
+          </article>
+          <article class="content-card reveal">
+            <h3>Technical development</h3>
+            <p>Signal instability first appeared in the flex sensors due to grounding and resistor issues. Later, the pump-drive section was rewired from an H-bridge approach to a double-throw relay setup so the system could inflate and deflate more effectively with less current loss.</p>
+          </article>
+          <article class="content-card reveal">
+            <h3>Calibration</h3>
+            <p>The project then tuned flex thresholds, pump activation duration, and delay values to make stronger knee flexion produce quicker inflation and earlier pitch changes. Threshold testing on the FSR sensors reduced false triggering and made the mapping between motion, deformation, and sound more coherent.</p>
+          </article>
+          <article class="content-card reveal">
+            <h3>Reflection</h3>
+            <p>The concept works as a complete chain, but air-pump noise, response speed, wearable fit, and the durability of the airbag system still limit refinement. A future version would use quieter pneumatic components, stronger signal filtering, and a more resolved physical finish for rehabilitation and performance settings.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery-block">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="project-number">Selected visuals</p>
+            <h2 class="section-title">Slides, materials, and technical tests.</h2>
+          </div>
+          <p class="section-note">Click any image to enlarge it.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="reveal"><img src="assets/musicflex/mf-1.jpg" alt="MusicFlex Buddy title slide" data-full="assets/musicflex/mf-1.jpg" /><figcaption>Project framing: body-language translation for users with upper-limb disabilities</figcaption></figure>
+          <figure class="reveal"><img src="assets/musicflex/mf-7.jpg" alt="MusicFlex Buddy context" data-full="assets/musicflex/mf-7.jpg" /><figcaption>Usage context: rehabilitation, learning, and performance</figcaption></figure>
+          <figure class="reveal"><img src="assets/musicflex/mf-21.jpg" alt="MusicFlex Buddy input layer" data-full="assets/musicflex/mf-21.jpg" /><figcaption>Input layer: flex sensor and wearable textile references</figcaption></figure>
+          <figure class="reveal"><img src="assets/musicflex/mf-22.jpg" alt="MusicFlex Buddy output layer" data-full="assets/musicflex/mf-22.jpg" /><figcaption>Output layer: pressure sensors, Arduino, speaker, and support frame</figcaption></figure>
+          <figure class="reveal"><img src="assets/musicflex/mf-24.jpg" alt="MusicFlex Buddy airbag iteration" data-full="assets/musicflex/mf-24.jpg" /><figcaption>Airbag iteration and early material testing</figcaption></figure>
+          <figure class="reveal"><img src="assets/musicflex/mf-27.jpg" alt="MusicFlex Buddy render" data-full="assets/musicflex/mf-27.jpg" /><figcaption>Rendered form and overall assembly</figcaption></figure>
+          <figure class="reveal"><img src="assets/musicflex/mf-28.jpg" alt="MusicFlex Buddy circuit test" data-full="assets/musicflex/mf-28.jpg" /><figcaption>Flex-sensor value testing and motor substitution for unavailable pump parts</figcaption></figure>
+          <figure class="reveal"><img src="assets/musicflex/mf-29.jpg" alt="MusicFlex Buddy relay test" data-full="assets/musicflex/mf-29.jpg" /><figcaption>Relay-based pump-drive debugging and inflation-speed adjustment</figcaption></figure>
+          <figure class="reveal"><img src="assets/musicflex/mf-30.jpg" alt="MusicFlex Buddy sound section" data-full="assets/musicflex/mf-30.jpg" /><figcaption>Sound playback section using FSR + DFPlayer Mini</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="footer-card reveal">
+          <div>
+            <p class="project-number">Navigation</p>
+            <h2 class="section-title" style="margin:0 0 8px">Continue browsing the portfolio.</h2>
+            <p style="margin:0;max-width:52ch">Move to the computational audio-visual project next, or return to the home page to choose another case study.</p>
+          </div>
+          <div class="inline-actions">
+            <a class="button secondary" href="index.html">Back to home</a>
+            <a class="button primary" href="generative-mechanical-score.html">Next project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" id="closeLightbox" aria-label="Close">×</button>
+    <img src="" alt="Expanded portfolio page" id="lightboxImage" />
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generative Mechanical Score – Tingting Liao</title>
+  <meta name="description" content="An interactive visual-audio system that turns mechanical noise into a generative score with sound-reactive lines, particles, and colour states." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>:root{--accent:#5d71d8;--accent-soft:rgba(93,113,216,.16);}</style>
+</head>
+<body class="project-page">
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark"></span><span>Tingting Liao</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="wrap">
+        <div class="back-row reveal">
+          <a class="button secondary" href="projects.html">← Back to projects</a>
+          <a class="next-project" href="index.html"><span class="small-note">Next</span><strong>Home</strong></a>
+        </div>
+        <div class="project-layout">
+          <div class="reveal">
+            <p class="kicker">Graduate Project 02</p>
+            <span class="eyebrow"><span class="dot"></span> Creative Coding · Audio Processing · Generative Visualisation</span>
+            <h1>Generative Mechanical Score</h1>
+            <p class="lead">An interactive visual-audio system that reinterprets everyday mechanical noise as a playable generative score. Mechanical recordings and synthetic sounds drive flowing staff lines, note objects, particles, scan overlays, and colour transitions in a Pygame environment.</p>
+            <div class="meta-grid">
+              <div class="meta-item"><small>Type</small><strong>Individual Project</strong></div>
+              <div class="meta-item"><small>Context</small><strong>Coding for Robotics</strong></div>
+              <div class="meta-item"><small>Tools</small><strong>Python · Pygame · NumPy · SoundFile</strong></div>
+              <div class="meta-item"><small>Output</small><strong>Interactive score + audio feature pipeline</strong></div>
+            </div>
+            <div class="tags"><span class="tag">Mechanical noise</span><span class="tag">Audio agent</span><span class="tag">Pygame</span><span class="tag">Interactive score</span></div>
+            <div class="hero-actions">
+              <a class="button primary" href="#process">Read the case study</a>
+              <a class="button secondary" href="#gallery-block">Open visual gallery</a>
+            </div>
+          </div>
+          <div class="project-cover reveal"><img src="assets/mechanical/gms-1.jpg" alt="Generative Mechanical Score cover" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="project-number">Overview</p>
+            <h2 class="section-title">Reframing machine noise as a visual audio agent.</h2>
+          </div>
+          <p class="section-note">This project is best understood as a hybrid of research note, creative coding experiment, and interactive artwork.</p>
+        </div>
+        <div class="overview-grid">
+          <article class="overview-card reveal">
+            <h3>Starting point</h3>
+            <p>The project begins with an everyday annoyance: hearing washing-machine noise repeatedly from a nearby laundry room. Instead of treating the sound as meaningless disturbance, the project asks whether it can be reinterpreted as rhythmic material for a playable visual score.</p>
+          </article>
+          <article class="overview-card reveal">
+            <h3>Design response</h3>
+            <p>Five edited mechanical sound clips are combined with two synthetic sine waves and one white-noise clip. Their audio features are extracted, normalized, and mapped to visual behaviour so users can click notes on screen and experience each sound through motion, colour, and particle change.</p>
+          </article>
+        </div>
+        <div class="stats-grid" style="grid-template-columns:repeat(3,1fr);margin-top:18px">
+          <article class="stat-card reveal"><strong>8 sounds</strong><p>5 mechanical clips + 3 generated reference signals</p></article>
+          <article class="stat-card reveal"><strong>3 features</strong><p>amplitude, spectral centroid, and high-frequency ratio</p></article>
+          <article class="stat-card reveal"><strong>60 fps</strong><p>target real-time rendering in the final system</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="project-number">Project story</p>
+            <h2 class="section-title">From sound collection to generative interaction.</h2>
+          </div>
+          <p class="section-note">The project evolved by scaling ambition down in the right way: from mechanical composition to a more feasible sound-to-visual translation system.</p>
+        </div>
+        <div class="case-grid">
+          <article class="content-card reveal">
+            <h3>Audio preparation</h3>
+            <p>The system reads five edited mechanical recordings and generates three reference signals inside the code: two sine waves near musical frequencies and one white-noise clip. Stereo files are converted to mono, saved to CSV, and normalized before analysis.</p>
+          </article>
+          <article class="content-card reveal">
+            <h3>Feature extraction</h3>
+            <p>Each sound is described through mean absolute amplitude, normalized spectral centroid, and high-frequency ratio. These values become concise descriptors for loudness, brightness, and noise content, and later drive the agent's visual state.</p>
+          </article>
+          <article class="content-card reveal">
+            <h3>System architecture</h3>
+            <p>The Python program is divided into classes: an Agent stores current and target visual states, Line objects draw animated staff lines, Note objects act as clickable triggers, Particle objects add motion, and a Score class updates and renders the system as a whole.</p>
+          </article>
+          <article class="content-card reveal">
+            <h3>Visual mapping</h3>
+            <p>Amplitude controls curvature and brightness, jitter controls additional random movement, and spectral centroid maps frequency range to colour. Lower and duller sounds lean blue, while brighter noisy sounds shift toward pink and purple, so different clips feel visually distinct.</p>
+          </article>
+          <article class="content-card reveal">
+            <h3>Iteration</h3>
+            <p>The project originally aimed to generate more complex musical structures from mechanical sound, but that analysis proved too ambitious with the available methods. The concept then shifted toward a simplified yet stronger outcome: a fluid visual stave system that softens noise through interaction.</p>
+          </article>
+          <article class="content-card reveal">
+            <h3>Reflection</h3>
+            <p>The result is modest but complete: the system runs reliably, presents different sounds with clearly different behaviours, and opens room for future expansion through richer note layouts, real-time input, and more advanced mappings such as onset or envelope analysis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery-block">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="project-number">Selected visuals</p>
+            <h2 class="section-title">Paper pages and interface states.</h2>
+          </div>
+          <p class="section-note">Click any image to enlarge it.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="reveal"><img src="assets/mechanical/gms-1.jpg" alt="Generative Mechanical Score title page" data-full="assets/mechanical/gms-1.jpg" /><figcaption>Abstract and project framing</figcaption></figure>
+          <figure class="reveal"><img src="assets/mechanical/gms-2.jpg" alt="Generative Mechanical Score background" data-full="assets/mechanical/gms-2.jpg" /><figcaption>Everyday origin and background references</figcaption></figure>
+          <figure class="reveal"><img src="assets/mechanical/gms-3.jpg" alt="Generative Mechanical Score data processing" data-full="assets/mechanical/gms-3.jpg" /><figcaption>Data processing and feature extraction</figcaption></figure>
+          <figure class="reveal"><img src="assets/mechanical/gms-4.jpg" alt="Generative Mechanical Score system architecture" data-full="assets/mechanical/gms-4.jpg" /><figcaption>System classes and visual-agent logic</figcaption></figure>
+          <figure class="reveal"><img src="assets/mechanical/gms-5.jpg" alt="Generative Mechanical Score process" data-full="assets/mechanical/gms-5.jpg" /><figcaption>Iterative development and changing project scope</figcaption></figure>
+          <figure class="reveal"><img src="assets/mechanical/gms-6.jpg" alt="Generative Mechanical Score results" data-full="assets/mechanical/gms-6.jpg" /><figcaption>Results, reflection, and future directions</figcaption></figure>
+          <figure class="reveal"><img src="assets/mechanical/gms-7.jpg" alt="Generative Mechanical Score references" data-full="assets/mechanical/gms-7.jpg" /><figcaption>References and closure</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="footer-card reveal">
+          <div>
+            <p class="project-number">Navigation</p>
+            <h2 class="section-title" style="margin:0 0 8px">Continue browsing the portfolio.</h2>
+            <p style="margin:0;max-width:52ch">Return to the home page to explore the rest of the case studies and the research-display recommendations.</p>
+          </div>
+          <div class="inline-actions">
+            <a class="button secondary" href="musicflex-buddy.html">Previous project</a>
+            <a class="button primary" href="index.html">Back to home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" id="closeLightbox" aria-label="Close">×</button>
+    <img src="" alt="Expanded portfolio page" id="lightboxImage" />
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
